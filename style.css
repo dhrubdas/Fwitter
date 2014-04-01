@@ -1,0 +1,28 @@
+
+html { 
+  background: url(img/Forest-Green-Wallpaper.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.box {
+	-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+width: 40%;
+margin-left:30%;
+margin-right:30%;
+padding:20px;
+border: 1px #000 solid;
+text-size:30px;
+top:40%;
+position: absolute;
+background-color:#fff;
+z-index: 1;
+}
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
