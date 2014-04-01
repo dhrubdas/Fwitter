@@ -6,7 +6,7 @@
 
  if (!$_POST['username'] | !$_POST['pass'] | !$_POST['pass2'] | !$_POST['firstname'] | !$_POST['lastname']) {
 
- 		die('You did not complete all of the required fields');
+ 		die(header("location: add.php?error=1"));
 
  	}
 
@@ -32,7 +32,7 @@ or die(mysql_error());
 
  	if ($_POST['pass'] != $_POST['pass2']) {
 
- 		die('Your passwords did not match. ');
+ 		die(header("location: add.php?error=2"));
 
  	}
 
@@ -89,6 +89,22 @@ or die(mysql_error());
 <div class="box" align="center">
 <h2> Registration Form </h2>
 <p>All fields are required.</p>
+
+<?php
+$error = $_GET['error'];
+
+if($error == 1) {
+	echo "Please complete all required fields";
+}
+
+if($error == 2)
+{
+	echo "The passwords do not match";
+}
+
+ ?>
+ <p> </p>
+
  
  <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 

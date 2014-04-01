@@ -7,7 +7,7 @@ if (mysqli_connect_errno())
   }
  
  $username = $_COOKIE['ID_my_site']; 
- $status = $_POST['status'];
+ $status = strip_tags($_POST['status']);
  
  mysqli_query($con,"UPDATE users SET Status='$status'
 WHERE username='$username'");
@@ -16,4 +16,4 @@ header("location: http://www.dhrub.co/fwitter/home.php");
 
 mysqli_close($con);
  
- ?> 
+ ?>
